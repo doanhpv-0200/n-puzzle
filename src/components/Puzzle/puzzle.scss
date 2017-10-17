@@ -1,0 +1,22 @@
+.puzzle {
+    text-align: center;
+    &-footer {
+        text-align: center;
+        .move {
+            margin-bottom: 12px;
+        }
+
+        span.button {
+            color: #333;
+            display: inline-block;
+            width: 48px;
+            border: 1px solid #333;
+            background: #FFF;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 4px 6px;
+            margin: 4px;
+            user-select: none;
+        }
+    }
+}
