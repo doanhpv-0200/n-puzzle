@@ -102,6 +102,13 @@ class Board extends React.Component {
     render() {
         const size = this.props.size;
         let squares = [];
+
+        let docWidth = document.body.clientWidth,
+            docHeight = document.body.clientHeight;
+        const maxWidth = parseInt(docWidth / size) - 10,
+            maxHeight = parseInt((docHeight - 200) / size),
+            unit = maxHeight > maxWidth ? maxWidth : maxHeight;
+
         this.props.board.map((val, index) => {
             squares.push(
                 <Cell
@@ -110,6 +117,7 @@ class Board extends React.Component {
                     size={size}
                     clickHandler={() => this.cellClickHandler(index)}
                     right={index+1 === val}
+                    unit={unit}
                 />
             );
 

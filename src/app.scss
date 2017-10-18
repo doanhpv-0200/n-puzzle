@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    margin: 0
 }
 
 #app {
@@ -29,7 +30,6 @@ html, body, #root {
 }
 
 .board {
-    font-family: 'Lobster', cursive;
     min-width: 300px;
     margin: 10px 10px 28px;
     text-align: center;

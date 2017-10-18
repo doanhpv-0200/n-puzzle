@@ -53,7 +53,7 @@ class Puzzle extends React.Component {
         return (
             <div className='puzzle'>
                 <div className="puzzle-header">
-                    {this.state.done ? <h1>You WON!</h1> : ''}
+                    {this.state.done ? <h3>You won!</h3> : ''}
                 </div>
                 <div className="puzzle-body">
                     {this.state && this.state.board ?

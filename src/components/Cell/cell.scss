@@ -1,10 +1,10 @@
 .square {
     display: inline-block;
     box-sizing: border-box;
-    width: 60px;
-    height: 60px;
+    width: 160px;
+    height: 160px;
     border: 1px solid #333;
-    line-height: 60px;
+    line-height: 160px;
     text-align: center;
     cursor: pointer;
     margin: 1px 2px 2px 1px;
@@ -12,12 +12,74 @@
     // box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     color: #333;
     background: #FFF;
-    border-radius: 4px;
+    border-radius: 8px;
     &.zero {
         opacity: 0
     }
-    &.right {
-        background: #C5E1A5;
-        border-color: #43A047;
+    // &.right {
+    //     background: #C5E1A5;
+    //     border-color: #43A047;
+    // }
+}
+
+@for $i from 10 through 300 {
+    .square-#{$i} {
+        width: #{$i}px;
+        height: #{$i}px;
+        line-height: #{$i}px;
+    }
+}
+
+@for $i from 10 through 40 {
+    .square-#{$i} {
+        font-size: 13px;
+    }
+}
+
+@for $i from 41 through 60 {
+    .square-#{$i} {
+        font-size: 1em;
+    }
+}
+
+@for $i from 61 through 80 {
+    .square-#{$i} {
+        font-size: 1.4em;
+    }
+}
+
+@for $i from 81 through 110 {
+    .square-#{$i} {
+        font-size: 1.6em;
+    }
+}
+
+@for $i from 111 through 140 {
+    .square-#{$i} {
+        font-size: 1.7em;
+    }
+}
+
+@for $i from 141 through 180 {
+    .square-#{$i} {
+        font-size: 1.8em;
+    }
+}
+
+@for $i from 181 through 220 {
+    .square-#{$i} {
+        font-size: 2em;
+    }
+}
+
+@for $i from 221 through 260 {
+    .square-#{$i} {
+        font-size: 2.5em;
+    }
+}
+
+@for $i from 261 through 300 {
+    .square-#{$i} {
+        font-size: 3em;
     }
 }
