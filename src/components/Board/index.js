@@ -103,7 +103,16 @@ class Board extends React.Component {
         const size = this.props.size;
         let squares = [];
         this.props.board.map((val, index) => {
-            squares.push(<Cell key={index} value={val} size={size} clickHandler={() => this.cellClickHandler(index)} />);
+            squares.push(
+                <Cell
+                    key={index}
+                    value={val}
+                    size={size}
+                    clickHandler={() => this.cellClickHandler(index)}
+                    right={index+1 === val}
+                />
+            );
+
             if ((index + 1) % size === 0) {
                 squares.push(<br key={`br_${index}`} />)
             }

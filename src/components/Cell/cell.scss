@@ -1,0 +1,23 @@
+.square {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #333;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    margin: 1px 2px 2px 1px;
+    // box-shadow: rgba(0,0,0,0.2) 0 1px 2px 0;
+    // box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    color: #333;
+    background: #FFF;
+    border-radius: 4px;
+    &.zero {
+        opacity: 0
+    }
+    &.right {
+        background: #C5E1A5;
+        border-color: #43A047;
+    }
+}

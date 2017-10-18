@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from '../Board';
+import Footer from '../Footer'
 import './puzzle.scss';
 
 class Puzzle extends React.Component {
@@ -23,7 +24,7 @@ class Puzzle extends React.Component {
         for (let i = 1; i <= num; i++) goal.push(i);
 
         const board = this.shuffle(goal);
-        this.setState({ size, board, goal, move: 0, done: false});
+        this.setState({ size, board, goal, move: 0, done: false, start: Date.now()});
     }
 
     updateBoard(board) {
@@ -56,23 +57,20 @@ class Puzzle extends React.Component {
                 </div>
                 <div className="puzzle-body">
                     {this.state && this.state.board ?
-                        <Board size={this.state.size} board={this.state.board} updateBoard={this.updateBoard.bind(this)}/>
+                        <Board
+                            size={this.state.size}
+                            board={this.state.board}
+                            updateBoard={this.updateBoard.bind(this)}
+                        />
                         : null
                     }
                 </div>
-                <div className="puzzle-footer">
-                    <div className="move">
-                        Move: {this.state.move}
-                    </div>
-                    <span className="button" onClick={() => this.newGame(3)}>3x3</span>
-                    <span className="button" onClick={() => this.newGame(4)}>4x4</span>
-                    <span className="button" onClick={() => this.newGame(5)}>5x5</span>
-                    <span className="button" onClick={() => this.newGame(6)}>6x6</span>
-                    <span className="button" onClick={() => this.newGame(7)}>7x7</span>
-                    <span className="button" onClick={() => this.newGame(8)}>8x8</span>
-                    <span className="button" onClick={() => this.newGame(9)}>9x9</span>
-                    <span className="button" onClick={() => this.newGame(10)}>10x10</span>
-                </div>
+                <Footer
+                    move={this.state.move}
+                    start={this.state.start}
+                    done={this.state.done}
+                    newGame={this.newGame.bind(this)}
+                />
             </div>
         );
     }
