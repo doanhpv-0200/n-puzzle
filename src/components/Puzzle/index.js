@@ -14,7 +14,7 @@ class Puzzle extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.newGame(this.state.size);
     }
 

@@ -1,23 +1,20 @@
 import React from 'react';
 import Timer from './Timer';
+import './footer.scss';
 
 const Footer = ({move, newGame, start, done}) => {
     return (
         <div className="puzzle-footer">
-            <div className="move">
-                <span>Move: {move}</span>
-                <Timer start={start} done={done} />
-            </div>
-            <span className="button" onClick={() => newGame(3)}>3x3</span>
-            <span className="button" onClick={() => newGame(4)}>4x4</span>
-            <span className="button" onClick={() => newGame(5)}>5x5</span>
-            <span className="button" onClick={() => newGame(6)}>6x6</span>
-            <span className="button" onClick={() => newGame(7)}>7x7</span>
-            <span className="button" onClick={() => newGame(8)}>8x8</span>
-            <span className="button" onClick={() => newGame(9)}>9x9</span>
-            <span className="button" onClick={() => newGame(10)}>10x10</span>
+            <Timer move={move} start={start} done={done} />
+            <Button newGame={() => newGame(3)} size={3} />
+            <Button newGame={() => newGame(4)} size={4} />
+            <Button newGame={() => newGame(5)} size={5} />
+            <Button newGame={() => newGame(6)} size={6} />
+            <Button newGame={() => newGame(7)} size={7} />
         </div>
     );
 }
+
+const Button = ({newGame, size}) => <span className="button" onClick={newGame}>{size}x{size}</span>
 
 export default Footer;

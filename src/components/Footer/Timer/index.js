@@ -6,8 +6,6 @@ class Timer extends React.Component {
         this.state = {
             elapsed: 0
         }
-
-        this.tick = this.tick.bind(this);
     }
 
     componentDidMount() {
@@ -28,17 +26,20 @@ class Timer extends React.Component {
         }
     }
 
-    tick() {
+    tick = () => {
         this.setState({elapsed: new Date() - this.props.start});
     }
 
     render() {
-        const seconds = (this.state.elapsed / 1000).toFixed(3);
+        const seconds = this.state.elapsed;
         return (
-            <span>
-                Time: {parseInt(seconds)}s
-                <span id="result" style={{display: 'none'}}>{seconds}</span>
-            </span>
+            <div className="move">
+                <span>Move: {this.props.move}</span>
+                <span>
+                    Time: {parseInt(seconds)} ms
+                    <span id="result" style={{display: 'none'}}>{seconds}</span>
+                </span>
+            </div>
         );
     }
 }
