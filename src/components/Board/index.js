@@ -2,11 +2,7 @@ import React from 'react';
 import Cell from '../Cell';
 
 class Board extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    componentWillMount() {
+    componentDidMount() {
         this.findClickables(this.props.board, this.props.size);
         document.body.addEventListener('keydown', (event) => {this.handleKeyPress(event)});
     }

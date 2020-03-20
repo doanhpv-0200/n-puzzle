@@ -1,5 +1,6 @@
 import React from 'react';
 import Timer from './Timer';
+import './footer.scss';
 
 const Footer = ({move, newGame, start, done}) => {
     return (

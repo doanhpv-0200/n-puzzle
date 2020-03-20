@@ -1,5 +1,5 @@
 import React from 'react';
-import Puzzle from 'components/Puzzle';
+import Puzzle from './components/Puzzle';
 
 import './app.scss';
 
